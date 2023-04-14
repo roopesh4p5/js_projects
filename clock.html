@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLOCK</title>
+
+    <style>
+        body{
+            background-color: black;
+                  
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            
+        }
+        .container{
+            margin-top: 350px;
+            padding-left: 50px;
+            
+
+            
+
+        }
+        .clock{
+            text-align: center;
+            font-size: 100px;
+            font-family: cursive;
+            color: rgb(64, 255, 0);
+            text-align: left;
+
+
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="dc" class="clock"></div>
+
+</div>
+
+
+
+
+    <script>
+        function run(){
+            let time= new Date();
+        h=time.getHours();
+        m=time.getMinutes();
+        s=time.getSeconds();
+        let session='AM';
+        
+        if(h>12){session='PM'}
+        
+       if(h>12){
+        h=h-12;
+       }
+       
+        
+       m=(m<10)?"0"+m:m;
+       s=(s<10)?"0"+s:s;
+       h=(h<10)?"0"+h:h;
+
+
+        document.getElementById('dc').innerHTML=`${h}:${m}:${s} ${session}`
+        setTimeout(run , 100);
+    
+    }
+       run();
+       
+//how to make the background 
+
+
+
+    </script>
+</body>
+</html>

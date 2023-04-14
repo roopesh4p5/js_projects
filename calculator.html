@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+
+
+    <style>
+    /* //adding css to calculator? */
+     body{
+        background-color: black;
+     }
+    
+    .content {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 20px;
+  background-color: #636363;
+  border: 1px solid #3b3b3b;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.io {
+  text-align: right;
+}
+
+input[type="button"] {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: #9f9e9e;
+  box-shadow: 0 5px rgba(0,0,0,0.2);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background-color: #777676;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: seagreen;
+  color: #ccc;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  font-size: 24px;
+  text-align: right;
+  padding-right: 10px;
+}
+p{
+    text-align: center;
+    text-shadow: #313131 1px 0 0 ;
+    font-weight:bolder;
+}
+
+  /* //adding bottom reflection to the table css? */
+
+
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <table>
+            <div id="hero">
+
+                <tr>
+                    <p>CACULATOR</p> 
+                    <td class="io" colspan="3"><input type="text" id="result"></td>
+                    <td><input type="button" value="C" onclick="clr()"></td>
+                </tr>
+
+            </div>
+            <tr>
+                <td><input type="button" value="1" onclick="display(`1`)"></td>
+                <td><input type="button" value="2" onclick="display(`2`)"></td>
+                <td><input type="button" value="3" onclick="display(`3`)"></td>
+                <td><input type="button" value="x" onclick="display(`*`)"></td>
+
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="display(`4`)"></td>
+                <td><input type="button" value="5" onclick="display(`5`)"></td>
+                <td><input type="button" value="6" onclick="display(`6`)"></td>
+                <td><input type="button" value="/" onclick="display(`/`)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="display(`7`)"></td>
+                <td><input type="button" value="8" onclick="display(`8`)"></td>
+                <td><input type="button" value="9" onclick="display(`9`)"></td>
+                <td><input type="button" value="-" onclick="display(`-`)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="display(`.`)"></td>
+                <td><input type="button" value="0" onclick="display(`0`)"></td>
+                <td><input type="button" value="=" onclick="equate(`=`)"></td>
+                <td><input type="button" value="+" onclick="display(`+`)"></td>
+            </tr>
+        </table>
+
+
+
+    </div>
+
+    <script>
+        function clr(){
+            document.getElementById("result").value="";
+            
+        }
+        function display(val){
+            document.getElementById("result").value+=val;
+
+        }
+        function equate(){
+            let a=document.getElementById("result").value;
+            let y=eval(a);
+            document.getElementById("result").value=y;
+
+        }
+
+
+    </script>
+</body>
+</html>
